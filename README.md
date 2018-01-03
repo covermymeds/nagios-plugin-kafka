@@ -38,12 +38,6 @@ A self-contained jar file with all dependencies will be created and symlinked to
 The Maven and Gradle builds are best as they will auto bootstap and run with no prior installed dependencies other than Java and ```make``` to kick it off.
 
 #### Pre-build Steps
-Update following files with correct JAAS configurations:
-```
-- conf/kafka_cli_jaas.conf
-- conf/kafka_client_jaas.conf
-- conf/kafka_server_jaas.conf
-```
 
 Files to update if you have higher version kafka:
 ```
