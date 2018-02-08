@@ -49,6 +49,12 @@ Update kafka and scala version string in these files.
 Look for change logs for details
 ```
 
+Make sure you're using the correct keystore/truststore password for your environment in following files:
+```
+- src/main/resources/consumer.properties
+- src/main/resources/producer.properties
+```
+
 #### Automated Build from Source
 The default ```make``` build will trigger a Gradle bootstrap from scratch with has an embedded checksum for security:
 
@@ -76,4 +82,6 @@ SBT:
 make sbt
 ```
 
-
+#### Post-build Steps
+Each build will generate a `check_kafka_broker.jar` file associated with the keystore/truststore password set in Pre-build Steps.
+After build completes, make sure to rename the check with a `_${environment}` suffix (e.g. check_kafka_broker_testing.jar)
